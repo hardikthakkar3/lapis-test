@@ -1,8 +1,13 @@
 <form (submit)="submit()"  class="form" [formGroup]="form">
 
   <div class="form-group">
-    <label for="name-input">Name:</label>
-    <input id="name-input" type="text" class="form-control" formControlName="name">
+    <label for="firstName-input">First Name:</label>
+    <input id="firstName-input" type="text" class="form-control" formControlName="first_name">
+  </div>
+
+  <div class="form-group">
+    <label for="lastName-input">Last Name:</label>
+    <input id="lastName-input" type="text" class="form-control" formControlName="last_name">
   </div>
 
   <div class="form-group">
@@ -13,8 +18,8 @@
 
 
   <div class="form-group">
-    <label for="phone-input">Phone:</label>
-    <input id="phone-input" type="tel" class="form-control" formControlName="phone">
+    <label for="avatar-input">Avatar:</label>
+    <input id="avatar-input" type="text" class="form-control" formControlName="avatar">
   </div>
 
 

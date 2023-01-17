@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { Contact } from '@app/core/models';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -26,9 +26,10 @@ export class ContactFormComponent implements OnInit, OnChanges {
   constructor(public formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       id: [this.contact.id],
-      name: [this.contact.name, Validators.required],
       email: [this.contact.email, Validators.required],
-      phone: [this.contact.phone]
+      first_name: [this.contact.first_name, Validators.required],
+      last_name: [this.contact.last_name, Validators.required],
+      avatar: [this.contact.avatar, Validators.required],
     });
   }
 
@@ -38,7 +39,7 @@ export class ContactFormComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     if (this.contact) {
-      this.form.patchValue({...this.contact});
+      this.form.patchValue({ ...this.contact });
     }
   }
 
