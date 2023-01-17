@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Socket} from 'ngx-socket-io';
-import {environment} from '@app/env';
-import {ContactsEventTypes} from '@app/core/models/contact.events';
-import {Contact} from '@app/core/models';
+import { Socket } from 'ngx-socket-io';
+import { environment } from '@app/env';
+import { ContactsEventTypes } from '@app/core/models/contact.events';
+import { Contact } from '@app/core/models';
 
 
 @Injectable()

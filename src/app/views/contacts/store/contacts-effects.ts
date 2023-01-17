@@ -52,7 +52,8 @@ export class ContactsEffects {
     ofType(load),
     pluck('id'),
     switchMap(id => this.contactsService.show(id).pipe(
-      map(contact => loadSuccess({ contact }))
+      pluck('data'),
+      map((contact: Contact) => loadSuccess({ contact }))
     ))
   ));
 
