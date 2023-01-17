@@ -13,9 +13,10 @@ export class ContactFormComponent implements OnInit, OnChanges {
 
   @Input() contact: Contact = {
     id: undefined,
-    name: '',
     email: '',
-    phone: ''
+    first_name: '',
+    last_name: '',
+    avatar: ''
   };
 
   @Output() save = new EventEmitter<Contact>();

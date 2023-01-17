@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactFormComponent } from './contact-form.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('ContactFormComponent', () => {
   let component: ContactFormComponent;
@@ -9,13 +9,13 @@ describe('ContactFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactFormComponent ],
+      declarations: [ContactFormComponent],
       imports: [
         FormsModule,
         ReactiveFormsModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -33,8 +33,10 @@ describe('ContactFormComponent', () => {
     spyOn(component.form, 'patchValue');
     const contact = {
       id: 1,
-      name: 'test',
-      email: 'test@avatsaev.com'
+      first_name: 'test',
+      last_name: 'test',
+      email: 'test@avatsaev.com',
+      avatar: 'test'
     };
     component.contact = contact;
     component.ngOnChanges();
