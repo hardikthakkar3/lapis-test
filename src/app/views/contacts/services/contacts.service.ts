@@ -13,20 +13,20 @@ export class ContactsService {
 
   index(): Observable<Contact[]> {
     return this.http
-        .get<Contact[]>(`${environment.appApi.baseUrl}/contacts`);
+      .get<Contact[]>(`${environment.appApi.baseUrl}/users?page=2`);
   }
 
   show(conactId: number): Observable<Contact> {
     return this.http
-        .get<Contact>(`${environment.appApi.baseUrl}/contacts/${conactId}`);
+      .get<Contact>(`${environment.appApi.baseUrl}/users/${conactId}`);
   }
 
   create(contact: Contact): Observable<Contact> {
-    return this.http.post<Contact>(`${environment.appApi.baseUrl}/contacts`, contact);
+    return this.http.post<Contact>(`${environment.appApi.baseUrl}/users`, contact);
   }
 
   update(contact: Partial<Contact>): Observable<Contact> {
-    return this.http.patch<Contact>(`${environment.appApi.baseUrl}/contacts/${contact.id}`, contact);
+    return this.http.patch<Contact>(`${environment.appApi.baseUrl}/users/${contact.id}`, contact);
   }
 
 
