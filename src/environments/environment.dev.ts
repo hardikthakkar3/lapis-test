@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
   appApi: {
-    baseUrl: 'http://dev.contacts.com:3000'
+    baseUrl: 'https://reqres.in/api'
   },
   socketConfig: {
-    url: 'http://dev.contacts.com:3000',
+    url: 'https://reqres.in',
     opts: {
       transports: ['websocket']
     }
