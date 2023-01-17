@@ -47,9 +47,10 @@ describe('ContactFormComponent', () => {
     spyOn(component.save, 'emit');
     const contact = {
       id: 1,
-      name: 'test',
+      first_name: 'test',
+      last_name: 'test',
       email: 'test@avatsaev.com',
-      phone: '12345'
+      avatar: 'test'
     };
     component.form.setValue(contact);
     component.submit();

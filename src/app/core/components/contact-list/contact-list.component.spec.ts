@@ -41,9 +41,10 @@ describe('ContactListComponent', () => {
     spyOn(component.edit, 'emit');
     const contact = {
       id: 1,
-      name: 'test',
+      first_name: 'test',
+      last_name: 'test',
       email: 'test@avatsaev.com',
-      phone: '12345'
+      avatar: 'test'
     };
     component.editContact(contact);
     expect(component.edit.emit).toHaveBeenCalledWith(contact);
@@ -53,9 +54,10 @@ describe('ContactListComponent', () => {
     spyOn(component.remove, 'emit');
     const contact = {
       id: 1,
-      name: 'test',
+      first_name: 'test',
+      last_name: 'test',
       email: 'test@avatsaev.com',
-      phone: '12345'
+      avatar: 'test'
     };
     component.deleteContact(contact);
     expect(component.remove.emit).toHaveBeenCalledWith(contact);
