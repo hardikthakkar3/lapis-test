@@ -15,7 +15,7 @@
     <td>{{c.first_name}}</td>
     <td>{{c.last_name}}</td>
     <td>{{c.email}}</td>
-    <td>{{c.avatar}}</td>
+    <td><img [src]="c.avatar" [ngStyle]="{'max-width': '128px', 'max-height': '128px'}"/></td>
     <td>
 
       <span class="float-right">
