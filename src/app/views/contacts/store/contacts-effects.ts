@@ -89,26 +89,26 @@ export class ContactsEffects {
 
   // Socket Live Events
 
-  @Effect()
-  liveCreate$ = this.contactsSocket.liveCreated$.pipe(
-    map(contact => createSuccess({ contact }))
-  );
+  // @Effect()
+  // liveCreate$ = this.contactsSocket.liveCreated$.pipe(
+  //   map(contact => createSuccess({ contact }))
+  // );
 
 
-  @Effect()
-  liveUpdate$ = this.contactsSocket.liveUpdated$.pipe(
-    map(contact => updateSuccess({ contact }))
-  );
+  // @Effect()
+  // liveUpdate$ = this.contactsSocket.liveUpdated$.pipe(
+  //   map(contact => updateSuccess({ contact }))
+  // );
 
-  @Effect()
-  liveDestroy$ = this.contactsSocket.liveDeleted$.pipe(
-    map(id => removeSuccess({ id }))
-  );
+  // @Effect()
+  // liveDestroy$ = this.contactsSocket.liveDeleted$.pipe(
+  //   map(id => removeSuccess({ id }))
+  // );
 
   constructor(
     private actions$: Actions,
     private contactsService: ContactsService,
-    private contactsSocket: ContactsSocketService
+    // private contactsSocket: ContactsSocketService
   ) { }
 
 }
