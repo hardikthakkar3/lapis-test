@@ -15,6 +15,7 @@ import { reducers } from '@app/contacts-store';
 import { ContactsSocketService } from './services/contacts-socket.service';
 import { ContactsService } from './services/contacts.service';
 import { FilterContactModule } from 'src/app/filter-contact/filter-contact.module';
+import { FilterContactPipe } from '@app/core/pipes/filter-contact.pipe';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FilterContactModule } from 'src/app/filter-contact/filter-contact.modul
     ContactDetailsComponent,
     ContactEditComponent,
     ContactNewComponent,
-    ContactsIndexComponent
+    ContactsIndexComponent,
+    FilterContactPipe
   ],
   providers: [ContactsService, ContactsSocketService, ContactsStoreFacade]
 })

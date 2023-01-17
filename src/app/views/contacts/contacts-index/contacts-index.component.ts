@@ -14,9 +14,11 @@ export class ContactsIndexComponent implements OnInit {
 
   contacts$ = this.contactsFacade.contacts$;
 
+  query = '';
+
   constructor(private contactsFacade: ContactsStoreFacade, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   editContact(contact: Contact) {
     this.router.navigate(['/contacts', contact.id, 'edit']);
@@ -32,5 +34,4 @@ export class ContactsIndexComponent implements OnInit {
       this.contactsFacade.deleteContact(contact.id);
     }
   }
-
 }

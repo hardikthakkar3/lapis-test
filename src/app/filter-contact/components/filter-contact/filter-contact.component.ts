@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,8 @@ export class FilterContactComponent implements OnInit {
 
   filterContactForm: FormGroup;
 
+  @Output() queryChange = new EventEmitter<string>();
+
   constructor(private formBuilder: FormBuilder) {
     this.filterContactForm = this.formBuilder.group({
       query: '',
@@ -18,6 +20,9 @@ export class FilterContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.filterContactForm.controls.query.valueChanges.subscribe((query) => {
+      this.queryChange.emit(query);
+    })
   }
 
 }

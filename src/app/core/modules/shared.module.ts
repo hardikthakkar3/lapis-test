@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from '@app/core/components/footer/footer.component';
-import { FilterContactPipe } from '../pipes/filter-contact.pipe';
 
 @NgModule({
   imports: [
@@ -20,8 +19,7 @@ import { FilterContactPipe } from '../pipes/filter-contact.pipe';
     ContactDetailsContainerComponent,
     ContactFormComponent,
     ToolbarComponent,
-    FooterComponent,
-    FilterContactPipe
+    FooterComponent
   ],
   exports: [
     ContactListComponent,
