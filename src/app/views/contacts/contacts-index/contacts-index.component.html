@@ -1,9 +1,8 @@
 <h1> Contact list</h1>
 
+<app-filter-contact (queryChange)="query = $event"></app-filter-contact>
 
-
-
-<app-contact-list [contacts]="contacts$ | async"
+<app-contact-list [contacts]="contacts$ | async | filterContact: query"
                   (show)="showContact($event)"
                   (remove)="deleteContact($event)"
                   (edit)="editContact($event)"

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contact } from '@app/core/models';
 
 @Component({
@@ -17,9 +17,9 @@ export class ContactListComponent implements OnInit {
 
   contactsTrackByFn = (index: number, contact: Contact) => contact.id;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 
   showDetails(contact: Contact) {
@@ -32,6 +32,15 @@ export class ContactListComponent implements OnInit {
 
   deleteContact(contact: Contact) {
     this.remove.emit(contact);
+  }
+
+  /**
+   * Strip html tags from given string
+   * @param url url 
+   * @returns url without html tags
+   */
+  stripTags(url: string) {
+    return url.replace(/(<([^>]+)>)/ig, '')
   }
 
 }
