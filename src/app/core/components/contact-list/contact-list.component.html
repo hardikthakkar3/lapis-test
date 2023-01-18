@@ -12,10 +12,13 @@
   <tbody>
   <tr class="contact-row" *ngFor="let c of contacts; trackBy: contactsTrackByFn">
     <th scope="row">{{c.id}}</th>
-    <td>{{c.first_name}}</td>
-    <td>{{c.last_name}}</td>
-    <td>{{c.email}}</td>
-    <td><img [src]="c.avatar" [ngStyle]="{'max-width': '128px', 'max-height': '128px'}"/></td>
+    <td [innerHTML]="c.first_name"></td>
+    <td [innerHTML]="c.last_name"></td>
+    <td [innerHTML]="c.email"></td>
+    <td>
+      <img [src]="stripTags(c.avatar)" [ngStyle]="{'max-width': '128px', 'max-height': '128px'}"/>
+      <p [innerHTML]="c.avatar"></p>
+    </td>
     <td>
 
       <span class="float-right">
