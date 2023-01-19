@@ -5,8 +5,8 @@ import { hot, cold } from 'jasmine-marbles';
 import { ContactsEffects } from './contacts-effects';
 
 import { ContactsServiceMock } from 'src/app/views/contacts/services/contacts-mock.service';
-import {ContactsService} from '../services/contacts.service';
-import {ContactsSocketService} from '../services/contacts-socket.service';
+import { ContactsService } from '../services/contacts.service';
+import { ContactsSocketService } from '../services/contacts-socket.service';
 import {
   create, createSuccess,
   load,
@@ -39,7 +39,7 @@ describe('Contacts Effects', () => {
 
   it('should dispatch LoadAllSuccess Action when the contacts are fetched from server', () => {
     const actionDispatched = loadAll();
-    const actionExpected = loadAllSuccess({contact: contactsService.contacts});
+    const actionExpected = loadAllSuccess({ contacts: contactsService.contacts });
 
     actions$ = hot('--a-', { a: actionDispatched });
     const expected = cold('--b', { b: actionExpected });
@@ -47,12 +47,16 @@ describe('Contacts Effects', () => {
   });
 
   it('should dispatch LoadSuccess Action when specific contact is fetched', () => {
-    const actionDispatched = load({id: 1});
-    const actionExpected = loadSuccess({contact: {
-      id: 1,
-      name: 'john',
-      email: 'john@gmail.com'
-    }});
+    const actionDispatched = load({ id: 1 });
+    const actionExpected = loadSuccess({
+      contact: {
+        id: 1,
+        first_name: 'john',
+        last_name: 'john',
+        email: 'john@gmail.com',
+        avatar: 'test'
+      }
+    });
 
     actions$ = hot('--a-', { a: actionDispatched });
     const expected = cold('--b', { b: actionExpected });
@@ -60,8 +64,8 @@ describe('Contacts Effects', () => {
   });
 
   it('should dispatch DeleteSuccess Action when specific contact is deleted', () => {
-    const actionDispatched = remove({id: 1});
-    const actionExpected = removeSuccess({id: 1});
+    const actionDispatched = remove({ id: 1 });
+    const actionExpected = removeSuccess({ id: 1 });
 
     actions$ = hot('--a-', { a: actionDispatched });
     const expected = cold('--b', { b: actionExpected });
@@ -69,16 +73,24 @@ describe('Contacts Effects', () => {
   });
 
   it('should dispatch CreateSuccess Action when specific contact is created', () => {
-    const actionDispatched = create({contact: {
-      id: 4,
-      name: 'john doe',
-      email: 'john@gmail.com'
-    }});
-    const actionExpected = createSuccess({contact: {
-      id: 4,
-      name: 'john doe',
-      email: 'john@gmail.com'
-    }});
+    const actionDispatched = create({
+      contact: {
+        id: 4,
+        first_name: 'john',
+        last_name: 'john',
+        email: 'john@gmail.com',
+        avatar: 'test'
+      }
+    });
+    const actionExpected = createSuccess({
+      contact: {
+        id: 4,
+        first_name: 'john',
+        last_name: 'john',
+        email: 'john@gmail.com',
+        avatar: 'test'
+      }
+    });
 
     actions$ = hot('--a-', { a: actionDispatched });
     const expected = cold('--b', { b: actionExpected });
@@ -87,17 +99,25 @@ describe('Contacts Effects', () => {
 
   it('should dispatch UpdateSuccess Action when specific contact is updated', () => {
 
-    const actionDispatched = update({contact: {
-      id: 4,
-      name: 'john doe',
-      email: 'john@gmail.com'
-    }});
+    const actionDispatched = update({
+      contact: {
+        id: 4,
+        first_name: 'john',
+        last_name: 'doe',
+        email: 'john@gmail.com',
+        avatar: 'test'
+      }
+    });
 
-    const actionExpected = updateSuccess({contact: {
-      id: 4,
-      name: 'john doe',
-      email: 'john@gmail.com'
-    }});
+    const actionExpected = updateSuccess({
+      contact: {
+        id: 4,
+        first_name: 'john',
+        last_name: 'doe',
+        email: 'john@gmail.com',
+        avatar: 'test'
+      }
+    });
 
     actions$ = hot('--a-', { a: actionDispatched });
     const expected = cold('--b', { b: actionExpected });

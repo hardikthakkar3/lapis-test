@@ -1,10 +1,10 @@
 export const environment = {
   production: false,
   appApi: {
-    baseUrl: 'http://localhost:3000'
+    baseUrl: 'https://reqres.in/api'
   },
   socketConfig: {
-    url: 'http://localhost:3000',
+    url: 'https://reqres.in',
     opts: {
       transports: ['websocket']
     }
